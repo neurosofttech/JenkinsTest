@@ -15,10 +15,10 @@ public class HomeTest {
     WebDriver driver;
     Home homePage ;
 
+
+
     @BeforeMethod
     public void setup(){
-
-
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -28,7 +28,7 @@ public class HomeTest {
 
         driver.get("https://courses.letskodeit.com/practice");
 
-        homePage = PageFactory.initElements(driver, Home.class);
+        homePage = PageFactory.initElements(driver, Home.class);///
     }
 
     @Test
