@@ -1,12 +1,11 @@
 package pages;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,6 +17,13 @@ public class Home {
     WebElement radiobutton;
     @FindBy(xpath = "//select[@id='carselect']")
     WebElement dropdown;
+
+    @FindBy(xpath = "//select[@name='categories']")
+    WebElement dropdown2;
+
+    //select[@name='categories']
+
+
     @FindBy(id = "multiple-select-example")
     WebElement Multipleselect;
 
@@ -46,6 +52,13 @@ public class Home {
 
     @FindBy(xpath = " //a[text()='Reload']")
     WebElement reloadlink;
+
+
+
+@FindBy(xpath = " //h4[@class='dynamic-heading'][1]")
+
+WebElement javascriptcourseclick;
+
 
 
 
@@ -186,4 +199,34 @@ public void varifymouseover() throws InterruptedException {
 
 
 }
+
+    public void varifyiframe() throws InterruptedException {
+        //int size = driver.findElements(By.tagName("iframe")).size();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,900)");
+
+
+
+
+       // driver.switchTo().frame(0);
+        driver.switchTo().frame("courses-iframe");
+
+         javascriptcourseclick.click();
+
+
+
+      //  Select select = new Select(dropdown2);
+       // select.selectByIndex(2);
+
+        Thread.sleep(5000);
+
+
+      //  javascriptcourseclick.click();
+
+
+    }
+
+
+
 }

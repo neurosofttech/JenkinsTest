@@ -91,6 +91,14 @@ public class HomeTest {
 
     }
 
+    @Test
+    public void iframeTest() throws InterruptedException {
+
+        homePage.varifyiframe();
+
+    }
+
+
 @AfterMethod
     public void teardown(){
         driver.quit();
